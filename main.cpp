@@ -22,6 +22,18 @@ double getAverage(vector<int> nums)
     int sum = getSum(nums);
     return static_cast<double>(sum) / nums.size();
 }
+int getMin(const vector<int> &v)
+{
+    int minVal = v[0];
+    for (int i = 1; i < v.size(); i++)
+    {
+        if (v[i] < minVal)
+        {
+            minVal = v[i];
+        }
+    }
+    return minVal;
+}
 
 int main()
 {
@@ -32,5 +44,6 @@ int main()
     double average = getAverage(myVector);
     cout << "Average: " << average << endl;
 
+    cout << "Minimum value: " << getMin(myVector) << endl;
     return 0;
 }
