@@ -13,10 +13,23 @@ int getSum(vector<int> v)
     return sum;
 }
 
+int getMin(const vector<int> &v)
+{
+    int minVal = v[0];
+    for (int i = 1; i < v.size(); i++)
+    {
+        if (v[i] < minVal)
+        {
+            minVal = v[i];
+        }
+    }
+    return minVal;
+}
+
 int main()
 {
-    vector<int> myVector = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int sum = getSum(myVector);
-    cout << "The sum of the elements in the vector is: " << sum << endl;
+    vector<int> v = {10, 5, 15, 20, 25, 30, 35, 40, 45, 50};
+    cout << "Sum: " << getSum(v) << endl;
+    cout << "Minimum value: " << getMin(v) << endl;
     return 0;
 }
